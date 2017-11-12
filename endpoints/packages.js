@@ -32,7 +32,7 @@ function Packages(api) {
  * @api public
  */
 Packages.prototype.get = function get(name, fn) {
-  return this.send(name.replace('@', '/'), fn).map(normalize.packages);
+  return this.send(name.replace(/(.)@/, '$1/'), fn).map(normalize.packages);
 };
 
 /**
